@@ -149,10 +149,10 @@ export default function Lab1() {
             </div>
             <div id="wd-images">
                 <h4>Image tag</h4>
-                Loading an image from the internet: <br />
+                Loading an image from the internet: Starship Image<br />
                 <img id="wd-starship" width="400px" src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg" />
                 <br />
-                Loading a local image:
+                Loading a local image: Teslabot Image
                 <br />
                 <img id="wd-teslabot" src="/images/teslabot.jpg" height="200px" /></div>
             <div id="wd-forms">
@@ -160,7 +160,7 @@ export default function Lab1() {
                 <form id="wd-text-fields">
                     <h5>Text Fields</h5>
                     <label htmlFor="wd-text-fields-username">Username:</label>
-                    <input placeholder="jdoe" id="wd-text-fields-username" /> <br />
+                    <input placeholder="Shashidhar" id="wd-text-fields-username" /> <br />
                     <label htmlFor="wd-text-fields-password">Password:</label>
                     <input type="password" value="123@#$asd" id="wd-text-fields-password" />
                     <br />
@@ -168,7 +168,7 @@ export default function Lab1() {
                     <input type="text" title="John" id="wd-text-fields-first-name" /> <br />
                     <label htmlFor="wd-text-fields-last-name">Last name:</label>
                     <input type="text" placeholder="Doe"
-                        value="Wonderland"
+                        value="Gadepalli"
                         title="The last name"
                         id="wd-text-fields-last-name" />
                     {/* copy rest of form elements here  */}
@@ -190,6 +190,10 @@ export default function Lab1() {
             </button>
 
             <h5 id="wd-radio-buttons">Radio buttons</h5>
+
+            <label htmlFor="wd-file-upload">Upload a file:</label>
+            <input type="file" id="wd-file-upload" name="file-upload" /><br />
+            <br /><br />
 
             <label>Favorite movie genre:</label><br />
 
@@ -252,20 +256,19 @@ export default function Lab1() {
 
             <label htmlFor="wd-text-fields-salary-start"> Starting salary:</label>
             <input type="number"
-                value="100000"
                 placeholder="1000"
+                min = "1000"
+                max = "100000"
                 id="wd-text-fields-salary-start" /><br />
 
             <label htmlFor="wd-text-fields-rating"> Rating: </label>
             <input type="range"
-                value="3"
                 max="5"
                 placeholder="Doe"
                 id="wd-text-fields-rating" /><br />
 
             <label htmlFor="wd-text-fields-dob"> Date of birth: </label>
             <input type="date"
-                value="2001-05-27"
                 id="wd-text-fields-dob" /><br />
 
             <h4>Anchor tag</h4>
@@ -273,7 +276,7 @@ export default function Lab1() {
             <a href="https://github.com/ShashidharGadepalli" id="wd-github"> click here </a>
             to get github Profile <br />
             Click on this link
-            <a href="https://github.com/ShashidharGadepalli/kambaz-react-web-app" id ="wd-source-code"> for Source code</a><br />
+            <a href="https://github.com/ShashidharGadepalli/kambaz-react-web-app" id="wd-source-code"> for Source code</a><br />
 
 
 

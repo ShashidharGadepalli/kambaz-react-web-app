@@ -9,6 +9,7 @@ export default function KambazNavigation() {
             <Link to="/Kambaz/Calendar" id="wd-calendar-link">Calendar</Link><br />
             <Link to="/Kambaz/Inbox" id="wd-inbox-link">Inbox</Link><br />
             <Link to="/Labs" id="wd-labs-link">Labs</Link><br />
+            <Link to="https://github.com/ShashidharGadepalli?tab=repositories" id="wd-github-link" target = "_blank">GitHub</Link><br />
         </div>
     );
 }

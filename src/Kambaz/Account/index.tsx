@@ -13,6 +13,8 @@ export default function Account() {
                     </td>
                     <td valign="top">
                     <h2>Account</h2>
+                    <h2> Sasidhar Gadepalli - Web Development summer-2 2025</h2>
+                    <p> </p>
                     <Routes>
                         <Route path="/" element={<Navigate to="/Kambaz/Account/Signin" />} />
                         <Route path="/Signin" element={<Signin />} />
