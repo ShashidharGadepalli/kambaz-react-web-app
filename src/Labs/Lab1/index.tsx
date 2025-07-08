@@ -1,8 +1,7 @@
 export default function Lab1() {
     return (
         <div id="wd-lab1">
-            <h1>Sasidhar Gadepalli</h1>
-            <p>Web Dev Summer 2 2025</p>
+            <h1>Sasidhar Gadepalli - Web Development summer - 2 2025.</h1>
             <h2>Lab 1</h2>
             <h3>HTML Examples</h3>
             <div id="wd-h-tag">
@@ -269,10 +268,14 @@ export default function Lab1() {
                 value="2001-05-27"
                 id="wd-text-fields-dob" /><br />
 
-                <h4>Anchor tag</h4>
-Please
-<a href="https://github.com/ShashidharGadepalli" id="wd-github"> click here </a>
-to get github repo <br/>
+            <h4>Anchor tag</h4>
+            Please
+            <a href="https://github.com/ShashidharGadepalli" id="wd-github"> click here </a>
+            to get github Profile <br />
+            Click on this link
+            <a href="https://github.com/ShashidharGadepalli/kambaz-react-web-app" id ="wd-source-code"> for Source code</a><br />
+
+
 
         </div>
     );
