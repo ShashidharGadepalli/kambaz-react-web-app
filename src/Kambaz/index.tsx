@@ -3,9 +3,11 @@ import Dashboard from "./Dashboard";
 import Navigation from "./Navigation";
 import Courses from "./Courses";
 import { Routes, Route, Navigate } from "react-router";
+import { Link } from "react-router-dom";
 export default function Kambaz() {
     return (
         <div id="wd-kambaz">
+            <Link to="/">Landing Page</Link>
             <table>
                 <tr>
                     <td valign="top">
