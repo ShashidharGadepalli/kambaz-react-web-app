@@ -7,7 +7,7 @@ export default function HomePage() {
       <ul>
         <li><a href="#/Labs/Lab1">Lab 1</a></li>
         <li><a href="#/Labs/Lab2">Lab 2</a></li>
-        <li><a href="#/Labs/Lab2">Lab 2</a></li>
+        <li><a href="#/Labs/Lab3">Lab 3</a></li>
       </ul>
       <h3>Kambaz App</h3>
       <a href="#/Kambaz">Kambaz App Link</a>

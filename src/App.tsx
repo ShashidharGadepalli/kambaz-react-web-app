@@ -2,6 +2,7 @@ import Labs from "./Labs";
 import HomePage from "./Landingpage";
 import { HashRouter,Route, Routes } from "react-router-dom";  
 import Kambaz from "./Kambaz";
+import "./Kambaz/styles.css";
 export default function App() {
   return (
     <HashRouter>

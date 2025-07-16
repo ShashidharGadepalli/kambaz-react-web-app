@@ -1,0 +1,20 @@
+#wd-kambaz {
+    display: flex;
+}
+
+.kambaz-sidebar {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.wd-main-content-offset {
+    flex: 1;
+    margin-left: 40px;
+    /* 40px gap between sidebar and first course */
+}
+
+.list-group.wd>.list-group-item.active {
+    color: black;
+    background-color: white;
+    border-left: 3px solid black !important;
+}
