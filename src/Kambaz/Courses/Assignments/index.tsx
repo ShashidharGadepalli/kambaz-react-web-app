@@ -1,5 +1,5 @@
 import { FaSearch, FaCheckCircle } from "react-icons/fa";
-import { BsGripVertical, BsPlus, BsFolderPlus, BsFileEarmarkPlus } from "react-icons/bs";
+import { BsGripVertical, BsFolderPlus, BsFileEarmarkPlus } from "react-icons/bs";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { MdOutlineAssignment } from "react-icons/md";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
