@@ -7,10 +7,8 @@ import KambazNavigation from "./Navigation";
 export default function Kambaz() {
     return (
         <div id="wd-kambaz">
-            <div className="kambaz-sidebar">
-                <KambazNavigation />
-            </div>
-            <div className="wd-main-content-offset p-1">
+            <KambazNavigation />
+            <div className="wd-main-content-offset p-1" style={{ marginLeft: 120 }}>
                 <Routes>
                     <Route path="/" element={<Navigate to="Account" />} />
                     <Route path="/Account/*" element={<Account />} />

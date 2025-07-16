@@ -1,6 +1,7 @@
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckMark";
 import { Button, Dropdown } from "react-bootstrap";
+import { FaRegEyeSlash } from "react-icons/fa";
 export default function ModulesControls() {
  return (
    <div id="wd-modules-controls" className="text-nowrap">
@@ -13,9 +14,6 @@ export default function ModulesControls() {
          <GreenCheckmark /> Publish All
        </Dropdown.Toggle>
        <Dropdown.Menu>
-         <Dropdown.Item id="wd-publish-all">
-           <GreenCheckmark /> Publish All
-         </Dropdown.Item>
          <Dropdown.Item id="wd-publish-all-modules-and-items">
            <GreenCheckmark /> Publish all modules and items
          </Dropdown.Item>
@@ -23,9 +21,11 @@ export default function ModulesControls() {
            <GreenCheckmark /> Publish modules only
          </Dropdown.Item>
          <Dropdown.Item id="wd-unpublish-all-modules-and-items">
+           <FaRegEyeSlash style={{ marginRight: 8 }} />
            Unpublish all modules and items
          </Dropdown.Item>
          <Dropdown.Item id="wd-unpublish-modules-only">
+           <FaRegEyeSlash style={{ marginRight: 8 }} />
            Unpublish modules only
          </Dropdown.Item>
        </Dropdown.Menu>
