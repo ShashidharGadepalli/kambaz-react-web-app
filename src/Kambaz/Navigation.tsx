@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { IoCalendarOutline } from "react-icons/io5";
-import { LiaBookSolid } from "react-icons/lia";
-import { FaInbox, FaGithub, FaUser, FaHome } from "react-icons/fa";
+import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
+import { FaInbox, FaGithub, FaHome } from "react-icons/fa";
 import { ListGroup } from "react-bootstrap";
 import { FaRegCircleUser } from "react-icons/fa6";
 export default function KambazNavigation() {
+    const { pathname } = useLocation();
+    const links = [
+        { label: "Dashboard", path: "/Kambaz/Dashboard", icon: AiOutlineDashboard },
+        { label: "Courses", path: "/Kambaz/Dashboard", icon: LiaBookSolid },
+        { label: "Calendar", path: "/Kambaz/Calendar", icon: IoCalendarOutline },
+        { label: "Inbox", path: "/Kambaz/Inbox", icon: FaInbox },
+        { label: "Labs", path: "/Labs", icon: LiaCogSolid },
+        { label: "Github", path: "https://github.com/ShashidharGadepalli/kambaz-react-web-app", icon: FaGithub },
+        { label: "Landing Page", path: "/", icon: FaHome },
+    ];
+
     return (
         <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: 120, overflowY: 'auto', background: '#000', zIndex: 1000 }}>
             <ListGroup id="wd-kambaz-navigation" style={{ width: 120 }}
@@ -15,53 +26,33 @@ export default function KambazNavigation() {
                     className="bg-black border-0 text-center">
                     <img src="/images/neu.jpg" width="75px" />
                 </ListGroup.Item>
-                <ListGroup.Item
-                    to="/Kambaz/Account"
-                    as={Link}
-                    className="text-center border-0 bg-white text-danger"
-                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', padding: '16px 0' }}
-                >
-                    <FaUser size={28} style={{ marginBottom: 4, color: '#d41b2c' }} />
-                    <span>Account</span>
+                <ListGroup.Item as={Link} to="/Kambaz/Account" className={`text-center border-0 bg-black
+            ${pathname.includes("Account") ? "bg-white text-danger" : "bg-black text-white"}`}>
+                    <FaRegCircleUser className={`fs-1 ${pathname.includes("Account") ? "text-danger" : "text-white"}`} />
+                    <br />
+                    Account
                 </ListGroup.Item>
-                <ListGroup.Item to="/Kambaz/Dashboard" as={Link}
-                    className="text-center border-0 bg-black text-white">
-                    <AiOutlineDashboard className="fs-1" style={{ color: '#d41b2c' }} /><br />
-                    Dashboard
-                </ListGroup.Item>
-                <ListGroup.Item to="/Kambaz/Dashboard" as={Link}
-                    className="text-center border-0 bg-black text-white">
-                    <LiaBookSolid className="fs-1" style={{ color: '#d41b2c' }} /><br />
-                    Courses
-                </ListGroup.Item>
-                <ListGroup.Item to="/Kambaz/Calendar" as={Link}
-                    className="text-center border-0 bg-black text-white">
-                    <IoCalendarOutline className="fs-1" style={{ color: '#d41b2c' }} /><br />
-                    Calendar
-                </ListGroup.Item>
-                <ListGroup.Item to="/Kambaz/Inbox" as={Link}
-                    className="text-center border-0 bg-black text-white">
-                    <FaInbox className="fs-1" style={{ color: '#d41b2c' }} /><br />
-                    Inbox
-                </ListGroup.Item>
-                <ListGroup.Item to="/Labs" as={Link}
-                    className="text-center border-0 bg-black text-white">
-                    <FaRegCircleUser className="fs-1" style={{ color: '#d41b2c' }} /><br />
-                    Labs
-                </ListGroup.Item>
-                <ListGroup.Item
-                    href="https://github.com/ShashidharGadepalli?tab=repositories"
-                    target="_blank"
-                    action
-                    className="text-center border-0 bg-black text-white">
-                    <FaGithub className="fs-1" style={{ color: '#d41b2c' }} /><br />
-                    GitHub
-                </ListGroup.Item>
-                <ListGroup.Item to="/" as={Link}
-                    className="text-center border-0 bg-black text-white">
-                    <FaHome size={28} style={{ marginBottom: 4, color: '#d41b2c' }} /><br />
-                    Landing Page
-                </ListGroup.Item>
+                {links.map((link) => (
+                    link.label === "Github" ? (
+                        <ListGroup.Item key={link.path}
+                            className="bg-black text-center border-0 text-white"
+                            action
+                            href={link.path}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {link.icon({ className: "fs-1 text-danger" })}
+                            <br />
+                            {link.label}
+                        </ListGroup.Item>
+                    ) : (
+                        <ListGroup.Item key={link.path} as={Link} to={link.path} className={`bg-black text-center border-0
+              ${pathname.includes(link.label) ? "text-danger bg-white" : "text-white bg-black"}`}>
+                            {link.icon({ className: "fs-1 text-danger" })}
+                            <br />
+                            {link.label}
+                        </ListGroup.Item>
+                    )
+                ))}
             </ListGroup>
         </div>
     );

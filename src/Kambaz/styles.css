@@ -9,8 +9,31 @@
 
 .wd-main-content-offset {
     flex: 1;
-    margin-left: 40px;
-    /* 40px gap between sidebar and first course */
+    margin-left: 120px;
+}
+
+#wd-courses-navigation {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+#wd-courses-navigation .list-group-item,
+#wd-courses-navigation a {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 400 !important;
+    border-left: 3px solid transparent !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#wd-courses-navigation .list-group-item.active,
+#wd-courses-navigation a.active {
+    font-weight: 400 !important;
+    color: #d32f2f !important;
+    background: #fff !important;
+    border-left: 3px solid #d32f2f !important;
 }
 
 .list-group.wd>.list-group-item.active {

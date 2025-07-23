@@ -3,31 +3,12 @@ import { BsGripVertical, BsFolderPlus, BsFileEarmarkPlus } from "react-icons/bs"
 import { IoEllipsisVertical } from "react-icons/io5";
 import { MdOutlineAssignment } from "react-icons/md";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
+import { useParams } from "react-router";
+import { assignments } from "../../Database";
 
 export default function Assignments() {
-  const assignments = [
-    {
-      code: "A1",
-      name: "ENV + HTML",
-      notAvailable: "July 2 at 12:00am",
-      due: "July 6 at 11:59pm",
-      id: 123,
-    },
-    {
-      code: "A2",
-      name: "CSS + BOOTSTRAP",
-      notAvailable: "July 9 at 12:00am",
-      due: "July 13 at 11:59pm",
-      id: 124,
-    },
-    {
-      code: "A3",
-      name: "JAVASCRIPT + REACT",
-      notAvailable: "July 16 at 12:00am",
-      due: "July 20 at 11:59pm",
-      id: 125,
-    },
-  ];
+  const { cid } = useParams();
+  const courseAssignments = assignments.filter((a: any) => a.course === cid);
   return (
     <div className="p-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -57,9 +38,9 @@ export default function Assignments() {
           <span className="ms-auto text-secondary">40% of Total</span>
           <IoEllipsisVertical className="ms-3 text-secondary" />
         </div>
-        {assignments.map((a) => (
+        {courseAssignments.map((a: any) => (
           <div
-            key={a.code}
+            key={a._id}
             className="d-flex align-items-center bg-white mb-2 ms-2 me-2 rounded border border-0"
             style={{ borderLeft: "5px solid #198754" }}
           >
@@ -67,16 +48,16 @@ export default function Assignments() {
             <MdOutlineAssignment className="text-success fs-3 me-3" />
             <div className="flex-grow-1 py-3">
               <a
-                href={`#/Kambaz/Courses/5610/Assignments/${a.id}`}
+                href={`#/Kambaz/Courses/${cid}/Assignments/${a._id}`}
                 className="fw-bold fs-5 mb-1 wd-assignment-link text-decoration-none text-dark"
               >
-                {a.code} - {a.name}
+                {a.title}
               </a>
               <div className="text-muted small">
-                <span className="fw-semibold text-success">Multiple Modules</span>
+                <span className="fw-semibold text-success">{a.subtitle}</span>
                 {` | Not available until ${a.notAvailable} | `}
                 <span className="fw-semibold">Due {a.due}</span>
-                {" | 100 pts"}
+                {` | ${a.points} pts`}
               </div>
             </div>
             <FaCheckCircle className="text-success fs-4 me-3" />

@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
-import { Form, Button, Card, Row, Col, InputGroup } from "react-bootstrap";
+import { Form, Card, Row, Col, InputGroup } from "react-bootstrap";
 import { FaCalendarAlt } from "react-icons/fa";
+import { useParams, Link } from "react-router-dom";
+import { assignments } from "../../Database";
 
 interface DateInputProps {
   value: string;
@@ -38,29 +40,31 @@ function DateInput({ value, onChange, ...props }: DateInputProps) {
 }
 
 export default function AssignmentEditor() {
-  const [dueDate, setDueDate] = useState("2025-07-06");
-  const [availableFrom, setAvailableFrom] = useState("2025-07-02");
-  const [availableUntil, setAvailableUntil] = useState("2025-07-06");
+  const { cid, aid } = useParams();
+  const assignment = assignments.find((a: any) => a._id === aid);
+  const [dueDate, setDueDate] = useState(assignment?.due || "");
+  const [availableFrom, setAvailableFrom] = useState(assignment?.notAvailable || "");
+  const [availableUntil, setAvailableUntil] = useState(assignment?.due || "");
 
   return (
     <div className="p-4 d-flex justify-content-center">
       <Card style={{ minWidth: 400, maxWidth: 700, width: "100%" }}>
         <Card.Body>
-          <Card.Title className="mb-4 fs-3">Edit Assignment</Card.Title>
+          <Card.Title className="mb-4 fs-3">{assignment?.title || "Edit Assignment"}</Card.Title>
           <Form>
             <Form.Group className="mb-3" controlId="assignmentName">
               <Form.Label>Assignment Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter assignment name" defaultValue="A1 - ENV + HTML" />
+              <Form.Control type="text" defaultValue={assignment?.title} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="assignmentDescription">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Enter description" defaultValue="The assignment is available online. Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page." />
+              <Form.Control as="textarea" rows={4} defaultValue={""} />
             </Form.Group>
             <Row>
               <Col md={4}>
                 <Form.Group className="mb-3" controlId="assignmentPoints">
                   <Form.Label>Points</Form.Label>
-                  <Form.Control type="number" placeholder="Points" defaultValue={100} />
+                  <Form.Control type="number" defaultValue={assignment?.points || 100} />
                 </Form.Group>
               </Col>
               <Col md={8}>
@@ -136,8 +140,8 @@ export default function AssignmentEditor() {
               </Col>
             </Row>
             <div className="d-flex justify-content-end">
-              <Button variant="secondary" className="me-2">Cancel</Button>
-              <Button variant="primary" type="submit">Save</Button>
+              <Link to={`/Kambaz/Courses/${cid}/Assignments`} className="btn btn-secondary me-2">Cancel</Link>
+              <Link to={`/Kambaz/Courses/${cid}/Assignments`} className="btn btn-primary">Save</Link>
             </div>
           </Form>
         </Card.Body>

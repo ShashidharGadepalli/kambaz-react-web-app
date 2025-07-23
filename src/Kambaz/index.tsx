@@ -8,7 +8,7 @@ export default function Kambaz() {
     return (
         <div id="wd-kambaz">
             <KambazNavigation />
-            <div className="wd-main-content-offset p-1" style={{ marginLeft: 120 }}>
+            <div className="wd-main-content-offset p-4" style={{ marginLeft: 120 }}>
                 <Routes>
                     <Route path="/" element={<Navigate to="Account" />} />
                     <Route path="/Account/*" element={<Account />} />

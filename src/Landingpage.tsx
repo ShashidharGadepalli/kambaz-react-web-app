@@ -1,6 +1,8 @@
-export default function HomePage() {
+import { Container } from "react-bootstrap";
+
+export default function LandingPage() {
   return (
-    <div>
+    <Container style={{ padding: '8px' }}>
       <h1>Sasidhar Gadepalli</h1>
       <h2>CS5610 - Web development Summer 02 course</h2>
       <h3>Lab Assignments</h3>
@@ -13,6 +15,6 @@ export default function HomePage() {
       <a href="#/Kambaz">Kambaz App Link</a>
       <h3>GitHub Repositories</h3>
       <a href="https://github.com/ShashidharGadepalli/kambaz-react-web-app" target="_blank" rel="noopener noreferrer">Repo Link</a>
-    </div>
+    </Container>
   );
 }

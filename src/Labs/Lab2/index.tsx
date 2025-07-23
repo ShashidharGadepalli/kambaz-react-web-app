@@ -22,7 +22,7 @@ import BoostrapNavigation from "./BootstrapNavigation";
 export default function Lab2() {
   return (
     <>
-      <Container>
+      <Container style={{ padding: '8px' }}>
         <h2>Lab 2 - Cascading Style Sheets</h2>
         <h3>Styling with the STYLE attribute</h3>
         …

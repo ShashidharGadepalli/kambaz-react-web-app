@@ -1,0 +1,21 @@
+[
+{"_id": "e_stu1_CS5610", "user": "stu1_CS5610", "course": "CS5610"},
+{"_id": "e_stu2_CS5610", "user": "stu2_CS5610", "course": "CS5610"},
+{"_id": "e_fac1_CS5610", "user": "fac1_CS5610", "course": "CS5610"},
+{"_id": "e_stu1_CS5800", "user": "stu1_CS5800", "course": "CS5800"},
+{"_id": "e_stu2_CS5800", "user": "stu2_CS5800", "course": "CS5800"},
+{"_id": "e_fac1_CS5800", "user": "fac1_CS5800", "course": "CS5800"},
+{"_id": "e_stu1_CS5010", "user": "stu1_CS5010", "course": "CS5010"},
+{"_id": "e_stu2_CS5010", "user": "stu2_CS5010", "course": "CS5010"},
+{"_id": "e_fac1_CS5010", "user": "fac1_CS5010", "course": "CS5010"},
+{"_id": "e_stu1_CS5100", "user": "stu1_CS5100", "course": "CS5100"},
+{"_id": "e_stu2_CS5100", "user": "stu2_CS5100", "course": "CS5100"},
+{"_id": "e_fac1_CS5100", "user": "fac1_CS5100", "course": "CS5100"},
+{"_id": "e_stu1_CS5300", "user": "stu1_CS5300", "course": "CS5300"},
+{"_id": "e_stu2_CS5300", "user": "stu2_CS5300", "course": "CS5300"},
+{"_id": "e_fac1_CS5300", "user": "fac1_CS5300", "course": "CS5300"},
+{"_id": "e_stu1_CS5400", "user": "stu1_CS5400", "course": "CS5400"},
+{"_id": "e_stu2_CS5400", "user": "stu2_CS5400", "course": "CS5400"},
+{"_id": "e_fac1_CS5400", "user": "fac1_CS5400", "course": "CS5400"}
+]
+  
